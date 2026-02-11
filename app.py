@@ -11,6 +11,9 @@ app = Flask(__name__)
 app.secret_key = "club_futbol_secreto"
 DB = "club.db"
 
+init_db()
+
+
 # ---------- BASE DE DATOS ----------
 def init_db():
     conn = sqlite3.connect(DB)
@@ -578,5 +581,3 @@ def eliminar(id):
     conn.close()
     return redirect('/')
 
-if __name__ == '__main__':
-    init_db() 
