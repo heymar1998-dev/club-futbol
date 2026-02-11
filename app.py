@@ -11,9 +11,6 @@ app = Flask(__name__)
 app.secret_key = "club_futbol_secreto"
 DB = "club.db"
 
-if not os.path.exists(DB): 
-init_db()
-
 
 # ---------- BASE DE DATOS ----------
 def init_db():
@@ -584,3 +581,4 @@ def eliminar(id):
 
 if __name__ == "__main__":
     init_db()
+    app.run(debug=True)
